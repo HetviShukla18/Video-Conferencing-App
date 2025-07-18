@@ -1,26 +1,111 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+/* === Custom Utility Classes === */
+@layer utilities {
+  .flex-center {
+    @apply flex justify-center items-center;
+  }
+
+  .flex-between {
+    @apply flex justify-between items-center;
+  }
+
+  .bg-dark1 {
+    background-color: var(--dark1);
+  }
+
+  .bg-dark2 {
+    background-color: var(--dark2);
+  }
+
+  .bg-blue1 {
+    background-color: var(--blue1);
+  }
+  .bg-sky1{
+    background-color: var(--sky1);
+  }
+  .bg-sky2{
+    background-color: #ECF0FF;
+  }
+  .bg-sky3{
+    background-color: #F5FCFF;
+  }
+  .bg-orange{
+    background-color: #FF742E;
+  }
+  .bg-purple{
+    background-color: #830EF9;
+  }
+  .bg-yellow{
+    background-color: #F9A90E;
+  }
+  .text-dark1 {
+    color: var(--dark1);
+  }
+
+  .text-dark2 {
+    color: var(--dark2);
+  }
+
+  .text-blue1 {
+    color: var(--blue1);
+  }
+
+  .bg-hero {
+    background-image: url('/icons/image-home.png');
+  }
+}
+.glassmorphism{
+  background: rgba(255,255,255,0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+/* === CSS Variables === */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --dark1: #1C1F2E;
+  --dark2: #161925;
+  --blue1: #2c4fa8;
+  --sky1: #C9DDFF;
+
+  --radius: 0.625rem;
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.145 0 0);
+
+  --border: oklch(0.922 0 0);
+  --ring: oklch(0.708 0 0);
+  --input: oklch(0.922 0 0);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  --border: oklch(1 0 0 / 10%);
+  --ring: oklch(0.556 0 0);
+  --input: oklch(1 0 0 / 15%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* === Base Layer === */
+@layer base {
+  * {
+    border-color: var(--border);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* === Clerk Provider Icon Overrides (Only GitHub) === */
+.cl-providerIcon_github,
+[class*="providerIcon_github"],
+[class*="github-provider"],
+[class*="githubProvider"] {
+  filter: invert(1) !important;
+}
+
+
+
+/* Optional: Generic social button override only for GitHub (if needed) */
+[class*="socialButtonsBlockButton"][class*="github"] img,
+[class*="socialButton"][class*="github"] img {
+  filter: invert(1) !important;
 }
