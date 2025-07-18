@@ -10,7 +10,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
     <Sonner
       theme={theme as ToasterProps["theme"]}
       toastOptions={{
-        className: "bg-dark2 text-white border-none",
+        className: "border-none",
       }}
       {...props}
     />
