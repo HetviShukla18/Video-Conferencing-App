@@ -15,7 +15,7 @@ const Slider = () => {
       bg-dark1 p-6 pt-28 text-white max-sm:hidden lg:w-[264px]">
       <div className="flex flex-1 flex-col gap-6">
         {sliderLinks.map((link) => {
-          const isActive = pathname === link.route || pathname.startsWith('${link.route}');
+          const isActive = pathname === link.route || pathname.startsWith(link.route);
 
           return (
             <Link
@@ -23,7 +23,7 @@ const Slider = () => {
               key={link.label}
               className={cn(
                 'flex gap-4 items-center p-4 rounded-lg justify-start',
-                { 'bg-blue1': isActive, }
+                { 'bg-blue1': isActive }
               )}
             >
               <Image src={link.imgUrl} alt={link.label} width={24} height={24} />

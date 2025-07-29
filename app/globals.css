@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Force rebuild - cache cleared */
+
 /* === Custom Utility Classes === */
 @layer utilities {
   .flex-center {
