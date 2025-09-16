@@ -10,7 +10,7 @@ const Upcoming = () => {
     font-bold'>
       Upcoming
     </h1>
-    <CallList type="upcoming" />
+    <CallList type=' upcoming' />
    </section>
   )
 }
