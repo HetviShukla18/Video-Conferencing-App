@@ -30,7 +30,7 @@ const MeetingCard = ({
   const { toast } = useToast();
 
   return (
-    <section className="flex min-h-[258px] w-full flex-col justify-between rounded-[14px] bg-dark-1 px-5 py-8 xl:max-w-[568px]">
+    <section className="flex min-h-[258px] w-full flex-col justify-between rounded-[14px] bg-dark1 px-5 py-8 xl:max-w-[568px]">
       {/* Header */}
       <article className="flex flex-col gap-5">
         <Image src={icon} alt="upcoming" width={28} height={28} />
@@ -44,8 +44,8 @@ const MeetingCard = ({
       </article>
 
       {/* Avatars */}
-      <article className={cn("flex justify-center relative", {})}>
-        <div className="relative flex w-full max-sm:hidden">
+      <article className="flex items-center gap-3">
+        <div className="flex items-center gap-2 overflow-x-auto max-sm:hidden">
           {avatarImages.map((img, index) => (
             <Image
               key={index}
@@ -53,14 +53,13 @@ const MeetingCard = ({
               alt="attendees"
               width={40}
               height={40}
-              className={cn("rounded-full", { absolute: index > 0 })}
-              style={{ top: 0, left: index * 28 }}
+              className="rounded-full shrink-0"
             />
           ))}
+        </div>
 
-          <div className="flex-center absolute left-[136px] size-10 rounded-full border-[5px] border-dark-3 bg-dark-4">
-            +5
-          </div>
+        <div className="flex items-center justify-center h-10 w-10 rounded-full border-2 border-dark2 bg-dark2 text-white text-sm">
+          +5
         </div>
       </article>
 
@@ -86,7 +85,7 @@ const MeetingCard = ({
                 title: "Link Copied",
               });
             }}
-            className="bg-dark-4 px-6"
+            className="bg-dark2 px-6"
           >
             <Image src="/icons/copy.svg" alt="feature" width={20} height={20} />
             &nbsp; Copy Link

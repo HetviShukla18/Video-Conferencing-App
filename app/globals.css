@@ -25,22 +25,28 @@
   .bg-blue1 {
     background-color: var(--blue1);
   }
-  .bg-sky1{
+  
+  .bg-sky1 {
     background-color: var(--sky1);
   }
-  .bg-sky2{
+  
+  .bg-sky2 {
     background-color: #ECF0FF;
   }
-  .bg-sky3{
+  
+  .bg-sky3 {
     background-color: #F5FCFF;
   }
-  .bg-orange{
+  
+  .bg-orange {
     background-color: #FF742E;
   }
-  .bg-purple{
+  
+  .bg-purple {
     background-color: #830EF9;
   }
-  .bg-yellow{
+  
+  .bg-yellow {
     background-color: #F9A90E;
   }
   .text-dark1 {

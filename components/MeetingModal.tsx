@@ -34,7 +34,7 @@ const MeetingModal = ({ isOpen, onClose, title, className, children
                 <div className='flex flex-col gap-6'>
                     {image && (
                         <div>
-                            <Image src={image} alt="image" width={72} />
+                            <Image src={image} alt="image" width={72} height={72} />
                         </div>
                     )}
                         <h1 className={cn('text-3xl font-bold leading-[42px]')}>{title}</h1>

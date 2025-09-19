@@ -1,5 +1,4 @@
 "use client";
-import { tokenProvider } from "@/actions/stream.action";
 import { useUser } from "@clerk/nextjs";
 import {
     StreamVideo,
@@ -13,16 +12,24 @@ import { ReactNode, useEffect, useState } from "react";
   const createClientTokenProvider = (userId: string) => {
     return async () => {
       try {
-        // Call the server action with the user ID
+        // Call the server action - the server will get the user ID from authentication
         const response = await fetch('/api/stream/token', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
-          body: JSON.stringify({ userId }),
+          credentials: 'include',
+          cache: 'no-store',
+          // No need to send userId in body - server gets it from Clerk auth
+          body: JSON.stringify({}),
         });
 
         if (!response.ok) {
+          const text = await response.text().catch(() => '');
+          console.error('Token endpoint error:', response.status, text);
+          if (response.status === 401) {
+            throw new Error('Unauthorized - Please sign in again');
+          }
           throw new Error('Failed to get token');
         }
 
@@ -38,7 +45,7 @@ import { ReactNode, useEffect, useState } from "react";
 const StreamVideoProvider = ( {children}: {children:ReactNode}) => {
     const [videoClient, setVideoClient]= useState<StreamVideoClient>();
     const [error, setError] = useState<string | null>(null);
-    const {user , isLoaded}= useUser();
+    const { user, isLoaded, isSignedIn } = useUser();
 
     useEffect(() => {
         // Reset error state
@@ -46,6 +53,7 @@ const StreamVideoProvider = ( {children}: {children:ReactNode}) => {
         
         console.log('StreamVideoProvider useEffect triggered', {
             isLoaded,
+            isSignedIn,
             hasUser: !!user,
             userId: user?.id,
             hasApiKey: !!apiKey,
@@ -57,9 +65,9 @@ const StreamVideoProvider = ( {children}: {children:ReactNode}) => {
             return;
         }
         
-        if (!user) {
-            console.log('No user found in StreamVideoProvider');
-            setError('User not found');
+        if (!isSignedIn || !user) {
+            console.log('User is not signed in yet; skipping Stream client init');
+            setVideoClient(undefined);
             return;
         }
         
@@ -92,7 +100,7 @@ const StreamVideoProvider = ( {children}: {children:ReactNode}) => {
             console.error('Failed to create Stream video client:', error);
             setError(`Failed to create video client: ${error instanceof Error ? error.message : 'Unknown error'}`);
         }
-    }, [user, isLoaded]);
+    }, [user, isLoaded, isSignedIn]);
 
     // Show error state
     if (error) {

@@ -3,8 +3,7 @@ import { Inter } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
-import "@stream-io/video-react-sdk/dist/css/styles.css";
-import 'react-datepicker/dist/react-datepicker.css'
+import CSSImports from "@/components/CSSImports";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -41,6 +40,7 @@ export default function RootLayout({
             }
           }}
         >
+          <CSSImports />
           {children}
           <Toaster position="top-right" richColors closeButton />
         </ClerkProvider>
