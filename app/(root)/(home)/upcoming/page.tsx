@@ -4,17 +4,6 @@ import React from 'react'
 
 const Upcoming = () => {
   return (
-<<<<<<< HEAD
-    <section className='flex 
-    size-full flex-col gap-10 
-    text-white'>
-    <h1 className='text-3xl 
-    font-bold'>
-      Upcoming
-    </h1>
-    <CallList type=' upcoming' />
-   </section>
-=======
     <section className="flex size-full flex-col gap-8 text-white">
       <header className="flex items-center gap-4">
         <Image src="/icons/upcoming.svg" alt="Upcoming" width={36} height={36} />
@@ -26,7 +15,6 @@ const Upcoming = () => {
 
       <CallList type="upcoming" />
     </section>
->>>>>>> 0ca0798 (.)
   )
 }
 

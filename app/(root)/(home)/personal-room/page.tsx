@@ -1,10 +1,76 @@
+<<<<<<< HEAD
+'use client'
+
+import { Button } from '@/components/ui/button'
+import { useUser } from '@clerk/nextjs'
+import { Description } from '@radix-ui/react-dialog'
+import { title } from 'process'
+import React from 'react'
+import { start } from 'repl'
+
+const Table =({ title, Description} : {title: 
+  string, Description: string}) => (
+    <div className="flex flex-col items-start gap-2 
+    xl:flex-row">
+      <h1 className="text-base font-medium text-sky-1
+      lg:text-xl xl:min-w-32>{title}:</h1>
+      <h1 className="truncate text-sm font-bold sm:max-w-[320px]">
+        {description}
+      </h1>
+      
+  
+</h1>
+
+
+  )
+
+const PersonalRoom = () => {
+  const { user } = useUser()
+  const meetingId = user?.id;
+
+   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}?personal=true`;
+
+   const startRoom = async () => {
+
+
+   }
+
+
+
+  return (
+    <section className='flex size-full flex-col gap-10 text-white'>
+    <h1 className='text-3xl font-bold'>
+      Personal Room
+    </h1>
+    <div className='flex w-full flex-col gap-8
+    xl:max-w-[900px]'>
+      <Table  title="Topic" Description={`${user?.
+      username}'s meeting Room`} />
+      <Table  title="Meeting ID" Description=
+      {meetingId!} />
+      <Table  title="Invite Link" Description=
+      {meetingLink} />
+    </div>
+    <div className='flex-gap-5'>
+      <Button className="bg-blue-1" onClick={startRoom}>
+        Start Meeting
+      </Button>
+      <Button className="bg-dark-3" onClick={() =>{
+        
+      }}>
+
+      </Button>
+
+    </div>
+   </section>
+=======
 "use client";
 
-import React, { useMemo } from 'react';
-import { useUser } from '@clerk/nextjs';
-import { useRouter } from 'next/navigation';
-import { toast } from 'sonner';
-import Link from 'next/link';
+import React, { useMemo } from 'react'
+import { useUser } from '@clerk/nextjs'
+import { useRouter } from 'next/navigation'
+import { toast } from 'sonner'
+import Link from 'next/link'
 
 const PersonalRoom = () => {
   const router = useRouter();
@@ -44,9 +110,14 @@ const PersonalRoom = () => {
   const handleJoin = async () => {
     const url = `/meeting/${roomId}?personal=true`;
     try {
+      console.log('[PersonalRoom] Navigating to', url);
       await router.push(url);
-      setTimeout(() => {}, 0);
+      // Some Next.js versions ignore awaiting push; add a microtask to ensure state flush
+      setTimeout(() => {
+        // no-op
+      }, 0);
     } catch (e) {
+      console.warn('[PersonalRoom] router.push failed, falling back to location.assign', e);
       if (typeof window !== 'undefined') {
         window.location.assign(url);
       }
@@ -73,7 +144,8 @@ const PersonalRoom = () => {
         <button type="button" onClick={handleJoin} className='rounded-md bg-dark2 px-4 py-2 hover:bg-dark1'>Try Programmatic Nav</button>
       </div>
     </section>
-  );
+>>>>>>> 0ca0798 (.)
+  )
 }
 
-export default PersonalRoom;
+export default PersonalRoom

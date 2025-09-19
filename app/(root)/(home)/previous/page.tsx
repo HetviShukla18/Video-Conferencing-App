@@ -1,15 +1,3 @@
-<<<<<<< HEAD
-import CallList from '@/components/CallList'
-
-const Previous = () => {
-  return (
-    <section className='flex size-full flex-col gap-10 text-white'>
-    <h1 className='text-3xl font-bold'>
-      Previous
-    </h1>
-    <CallList type='ended' />
-   </section>
-=======
 import React from 'react'
 import Image from 'next/image'
 import { CallList } from '@/components/CallList'
@@ -27,8 +15,7 @@ const Previous = () => {
 
       <CallList type="ended" />
     </section>
->>>>>>> 0ca0798 (.)
   )
 }
 
-export default  Previous
+export default Previous
