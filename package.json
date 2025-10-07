@@ -2,15 +2,14 @@
   "name": "zinkup",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://HetviShukla18.github.io/Video-Conferencing-App",
+
 
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build --no-lint",
     "start": "next start",
     "lint": "next lint",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d out"
+
   },
   "dependencies": {
     "@clerk/nextjs": "^6.25.4",
