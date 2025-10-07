@@ -57,6 +57,21 @@ const MeetingTypeList = () => {
     }
   }
 
+  const joinMeeting = () => {
+    const url = values.link?.trim()
+    if (!url) {
+      toast.error('Please paste a meeting link')
+      return
+    }
+    try {
+      // Allow both absolute and relative meeting links
+      router.push(url)
+      setMeetingState(undefined)
+    } catch (e) {
+      toast.error('Invalid meeting link')
+    }
+  }
+
   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`
 
   return (
@@ -77,10 +92,10 @@ const MeetingTypeList = () => {
         className="bg-blue1"
       />
       <HomeCard
-        img="/icons/recording.png"
+        img="/icons/recordings.svg"
         title="View Recordings"
         description="Check out your recordings"
-        handleClick={() => setMeetingState('isJoinMeeting')}
+        handleClick={() => router.push('/recording')}
         className="bg-purple"
       />
       <HomeCard
@@ -105,10 +120,13 @@ const MeetingTypeList = () => {
               Add a description
             </label>
             <textarea
-              className="rounded bg-dark-3 p-2 focus-visible:ring-0"
+              rows={3}
+              placeholder="What's this meeting about?"
+              className="w-full rounded-lg bg-white px-4 py-3 text-gray-900 placeholder:text-gray-500 border border-dark2 focus:border-blue1 focus:outline-none focus:ring-2 focus:ring-blue1/20 transition-all duration-200 resize-none"
               onChange={(e) =>
                 setValues({ ...values, description: e.target.value })
               }
+              value={values.description}
             />
           </div>
           <div className="flex w-full flex-col gap-2.5">
@@ -127,7 +145,9 @@ const MeetingTypeList = () => {
               timeIntervals={15}
               timeCaption="time"
               dateFormat="MMMM d, yyyy h:mm aa"
-              className="w-full rounded bg-dark-3 p-2 focus:outline-none"
+              minDate={new Date()}
+              placeholderText="Select date & time"
+              className="w-full rounded-lg bg-white px-4 py-3 text-gray-900 placeholder:text-gray-500 border border-dark2 focus:border-blue1 focus:outline-none focus:ring-2 focus:ring-blue1/20 transition-all duration-200"
             />
           </div>
         </MeetingModal>
@@ -157,6 +177,29 @@ const MeetingTypeList = () => {
         handleClick={createMeeting}
         buttonIcon="/icons/plus.png"
       />
+
+      {/* Join Meeting Modal */}
+      <MeetingModal
+        isOpen={meetingState === 'isJoinMeeting'}
+        onClose={() => setMeetingState(undefined)}
+        title="Join a Meeting"
+        handleClick={joinMeeting}
+        buttonIcon="/icons/user.png"
+        buttonText="Join"
+      >
+        <div className="flex flex-col gap-2.5">
+          <label className="text-base font-normal leading-[22px] text-sky-2">
+            Paste invitation link
+          </label>
+          <input
+            type="text"
+            placeholder="https://your-domain/meeting/123..."
+            className="w-full rounded-lg bg-white px-4 py-3 text-gray-900 placeholder:text-gray-500 border border-dark2 focus:border-blue1 focus:outline-none focus:ring-2 focus:ring-blue1/20 transition-all duration-200"
+            value={values.link}
+            onChange={(e) => setValues({ ...values, link: e.target.value })}
+          />
+        </div>
+      </MeetingModal>
     </section>
   )
 }
