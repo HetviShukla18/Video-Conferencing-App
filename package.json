@@ -2,6 +2,8 @@
   "name": "zinkup",
   "version": "0.1.0",
   "private": true,
+  "build": "next build --no-lint"
+
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
@@ -40,4 +42,5 @@
     "tw-animate-css": "^1.3.5",
     "typescript": "^5"
   }
+  
 }
