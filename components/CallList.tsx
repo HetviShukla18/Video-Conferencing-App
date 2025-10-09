@@ -96,6 +96,11 @@ export const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }
   const emptyState = getEmptyStateConfig();
   const EmptyIcon = emptyState.icon;
 
+  // Build a robust origin for absolute links
+  const origin = typeof window !== 'undefined'
+    ? window.location.origin
+    : (process.env.NEXT_PUBLIC_BASE_URL ?? '');
+
   if (isLoading) {
     return (
       <div className="flex items-center justify-center min-h-[400px]">
@@ -146,7 +151,7 @@ export const CallList = ({ type }: { type: 'ended' | 'upcoming' | 'recordings' }
               link={
                 type === 'recordings'
                   ? (meeting as any).url
-                  : `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${(meeting as Call).id}`
+                  : ((meeting as Call).id ? `${origin}/meeting/${(meeting as Call).id}` : '')
               }
             />
           ))}

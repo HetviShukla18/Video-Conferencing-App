@@ -72,7 +72,11 @@ const MeetingTypeList = () => {
     }
   }
 
-  const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${callDetails?.id}`
+  // Build a robust meeting link that works in both dev and production
+  const origin = typeof window !== 'undefined'
+    ? window.location.origin
+    : (process.env.NEXT_PUBLIC_BASE_URL ?? '')
+  const meetingLink = callDetails?.id ? `${origin}/meeting/${callDetails.id}` : ''
 
   return (
     <section className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -158,6 +162,10 @@ const MeetingTypeList = () => {
           title="Meeting Created"
           className="text-center"
           handleClick={() => {
+            if (!meetingLink) {
+              toast.error('Unable to build meeting link')
+              return
+            }
             navigator.clipboard.writeText(meetingLink)
             toast.success('Link copied')
           }}
