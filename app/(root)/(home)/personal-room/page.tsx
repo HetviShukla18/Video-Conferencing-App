@@ -1,8 +1,11 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { useGetCallById } from '@/hooks/useGetCallById'
 import { useUser } from '@clerk/nextjs'
 import { Description } from '@radix-ui/react-dialog'
+import { useStreamVideoClient } from '@stream-io/video-react-sdk'
+import { useRouter } from 'next/navigation'
 import { title } from 'process'
 import React from 'react'
 import { start } from 'repl'
@@ -26,12 +29,31 @@ const Table =({ title, Description} : {title:
 const PersonalRoom = () => {
   const { user } = useUser()
   const meetingId = user?.id;
+  const { toast } = useToast();
+  const client = useStreamVideoClient();
+  const router = useRouter();
 
-   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}?personal=true`;
+   const meetingLink = `${process.env.NEXT_PUBLIC_BASE_URL}/meeting/${meetingId}?
+   personal=true`;
 
+   const { call } = useGetCallById(meetingId!);
+
+  
    const startRoom = async () => {
 
+    if(!client || !user) return;
 
+
+    if(!call) {
+      const newCall = client.call('default', meetingId!);
+    }
+
+      await newCall.getOrCreate({
+        data: {
+          starts_at: new Date().toISOString(),
+      }});
+
+      router.push(`/meeting/${meetingId}?personal=true`);
    }
 
 
@@ -54,11 +76,15 @@ const PersonalRoom = () => {
       <Button className="bg-blue-1" onClick={startRoom}>
         Start Meeting
       </Button>
-      <Button className="bg-dark-3" onClick={() =>{
-        
-      }}>
+      <Button className="bg-dark-3" onClick={() => {
+         navigator.clipboard.writeText(meetingLink);
+         toast({
+          title: 'Link copied'})
+        }}
 
-      </Button>
+      }}>
+        Copy Invitation
+     </Button>
 
     </div>
    </section>

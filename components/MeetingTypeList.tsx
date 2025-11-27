@@ -6,9 +6,10 @@ import { useRouter } from 'next/navigation'
 import MeetingModal from './MeetingModal'
 import { useUser } from '@clerk/nextjs'
 import { Call, descending, useStreamVideoClient } from '@stream-io/video-react-sdk'
-import { toast } from 'sonner'NPM RU
+import { toast } from 'sonner';
 import ReactDatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
+import { Input } from './ui/input'
 
 
 const MeetingTypeList = () => {
@@ -85,7 +86,7 @@ if(!values.dateTime){
         img="/icons/recording.png"
         title="View Recordings"
         description="Check out your recordings"
-        handleClick={() => setmeetingState('isJoinMeeting')}
+        handleClick={() => router.push('/recordings')} 
         className="bg-purple"
       />
       <HomeCard
@@ -145,7 +146,8 @@ if(!values.dateTime){
         buttonText="Start Meeting"
         handleClick={() =>{
           navigator.clipboard.writeText(meetingLink);
-         toast({title: 'Link copied'})
+         toast({
+          title: 'Link copied'})
         }}
         image='/icons/checked.svg'
         buttonIcon="/icons/copy.svg"
@@ -164,6 +166,26 @@ if(!values.dateTime){
         handleClick={createMeeting}
         buttonIcon="/icons/plus.png"
       />
+      <MeetingModal
+        isOpen={meetingState === 'isJoiningMeeting'}
+        onClose={() => setmeetingState(undefined)}
+        title="Type the link here"
+        className="text-center"
+        buttonText="Join Meeting"
+        handleClick={() => router.push(values.link)}
+        buttonIcon="/icons/plus.png"
+      >
+        <Input
+          placeholder="Meeting link"
+          className="bg-dark-3 border-none 
+          focus-visible:ring-0
+          focus-visible:ring-offset-0"
+          onChange={(e) => setvalues({ ...values, link: 
+          e.target.value })}
+         />
+      </MeetingModal>
+
+
     </section>
   );
 };

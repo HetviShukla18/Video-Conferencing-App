@@ -79,9 +79,9 @@ export const CallList = ({ type  }: {type: 'ended' |
       Call| CallRecording) => (
         <MeetingCard 
          key={(meeting as Call).id}
-         title={(meeting as Call).state?.custom.description.
-          substring(0, 26) || meeting.
-          filename.substring(0, 20) || 'No description'}
+         title={(meeting as Call).state?.custom?.
+          description?.substring(0, 26) || meeting?.
+          filename?.substring(0, 20) || 'Personal Meeting'}
          
          date={meeting.state?.startsAt.toLocaleString
           () || meeting.start_time.toLocaleString()}
