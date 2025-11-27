@@ -1,8 +1,10 @@
+'use client'
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import MobileNav from './MobileNav'
-import { UserButton, SignedIn, SignUpButton, SignedOut } from '@clerk/nextjs'
+import { UserButton, SignedIn, SignedOut, SignInButton } from '@clerk/nextjs'
 
 const Navabar = () => {
   return (
@@ -23,6 +25,13 @@ const Navabar = () => {
         <SignedIn>
           <UserButton/>
         </SignedIn>
+        <SignedOut>
+          <SignInButton mode="modal">
+            <button className='rounded-md bg-blue1 px-4 py-2 text-white hover:opacity-90'>
+              Sign in
+            </button>
+          </SignInButton>
+        </SignedOut>
           <MobileNav/>
       </div>
     </nav>

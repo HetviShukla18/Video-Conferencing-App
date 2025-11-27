@@ -1,6 +1,8 @@
 "use client"
 
 import { DeviceSettings, useCall, VideoPreview } from '@stream-io/video-react-sdk'
+import { toast } from 'sonner'
+
 import React, { useEffect, useState } from 'react'
 import { Button } from './ui/button'
 
@@ -43,9 +45,14 @@ const MeetingSetup: React.FC<MeetingSetupProps> = ({ setIsSetupComplete }) => {
         <DeviceSettings />
       </div>
       <Button className='rounded-md bg-green-500 px-4 py-2.5'
-      onClick={()=>{
-        call.join();
-        setIsSetupComplete(true);
+      onClick={async ()=>{
+        try {
+          await call.join({ create: true });
+          setIsSetupComplete(true);
+        } catch (err: any) {
+          console.error('Failed to join call:', err);
+          toast.error(err?.message || 'Failed to join the meeting');
+        }
       }}>
         Join Meeting
       </Button>
