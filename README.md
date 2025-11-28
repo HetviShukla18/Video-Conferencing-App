@@ -64,25 +64,21 @@ npm run dev
 
 ## 📸 Screenshots
 
-### Dashboard
-![Dashboard](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104246.png
-)
+### 🔹 Home / Landing Page
+![Screenshot 1](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104246.png)
 
-### User Profile
-![User Profile](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104419.png
-)
+### 🔹 Create Meeting
+![Screenshot 2](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104419.png)
 
-### Settings Page
-![Settings](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104510.png
-)
+### 🔹 Join Meeting
+![Screenshot 3](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104510.png)
 
-### Auth UI
-![Auth UI](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104757.png
-)
+### 🔹 Dashboard
+![Screenshot 4](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104757.png)
 
-### Video Call
-![Video Call](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104757.png
-)
+### 🔹 Schedule Meeting
+![Screenshot 5](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104828.png)
+
 
 
 
