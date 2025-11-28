@@ -64,18 +64,22 @@ npm run dev
 
 ## 📸 Screenshots
 
-### 🟣 Home Page  
-![Home Page](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104246.png)
+### Dashboard
+![Dashboard](https://files.oaiusercontent.com/file-5a4dabaa-77f1-46fa-80cc-3d8bd5313747.png)
 
-### 🟣 Create Meeting  
-![Create Meeting](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104419.png)
+### User Profile
+![User Profile](https://files.oaiusercontent.com/file-8d2be2ba-1f33-462a-87d7-67978a5ac81e.png)
 
-### 🟣 Join Meeting  
-![Join Meeting](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104510.png)
+### Settings Page
+![Settings](https://files.oaiusercontent.com/file-598ebf54-aa07-491c-8c96-4b75000d7c0e.png)
 
-### 🟣 Dashboard  
-![Dashboard](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104757.png)
+### Authentication UI
+![Auth UI](https://files.oaiusercontent.com/file-a64a6211-63c6-4b7a-b17c-45a9adb93a90.png)
 
-### 🟣 Schedule Meeting  
-![Schedule Meeting](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104828.png)
+### Video Call Feature
+![Video Call](https://files.oaiusercontent.com/file-542f9e1b-747a-4da2-8682-1478f69a5c2b.png)
+
+### Scheduling UI
+![Scheduler](https://files.oaiusercontent.com/file-5fcfa716-00d7-4a14-b6b4-f75010ed10c2.png)
+
 
