@@ -65,19 +65,24 @@ npm run dev
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104246.png)
+![Dashboard](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104246.png
+)
 
 ### User Profile
-![User Profile](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104419.png)
+![User Profile](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104419.png
+)
 
 ### Settings Page
-![Settings](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104510.png)
+![Settings](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104510.png
+)
 
 ### Auth UI
-![Auth UI](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104757.png)
+![Auth UI](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104757.png
+)
 
 ### Video Call
-![Video Call](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104828.png)
+![Video Call](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104757.png
+)
 
 
 
