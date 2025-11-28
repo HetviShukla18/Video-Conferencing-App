@@ -62,22 +62,23 @@ npm run dev
 Restart with:
 npm run dev
 
-## 📸 Screenshots
+## Project Screenshots
 
-### 🏠 Home / Landing Page
-![Screenshot 1](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104246.png)
+### 1. Home Page
+![Screenshot 1](public/Screenshots/Screenshot%202025-11-28%20104246.png)
 
-### 📝 Create Meeting
-![Screenshot 2](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104419.png)
+### 2. Meeting Create Page
+![Screenshot 2](public/Screenshots/Screenshot%202025-11-28%20104419.png)
 
-### 🎥 Join Meeting
-![Screenshot 3](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104510.png)
+### 3. Meeting Interface
+![Screenshot 3](public/Screenshots/Screenshot%202025-11-28%20104510.png)
 
-### 📊 Dashboard
-![Screenshot 4](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104757.png)
+### 4. Chat Section
+![Screenshot 4](public/Screenshots/Screenshot%202025-11-28%20104757.png)
 
-### 📅 Schedule Meeting
-![Screenshot 5](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/main/public/Screenshots/Screenshot%202025-11-28%20104828.png)
+### 5. Screen Sharing
+![Screenshot 5](public/Screenshots/Screenshot%202025-11-28%20104828.png)
+
 
 
 
