@@ -64,18 +64,18 @@ npm run dev
 
 ## 📸 Screenshots
 
-### 🟣 Home Page
+### 🟣 Home Page  
 ![Home Page](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104246.png)
 
-### 🟣 Schedule a Meeting
-![Schedule Meeting](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104419.png)
+### 🟣 Create Meeting  
+![Create Meeting](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104419.png)
 
-### 🟣 Join Meeting
+### 🟣 Join Meeting  
 ![Join Meeting](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104510.png)
 
-### 🟣 Meeting Interface
-![Meeting Interface](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104757.png)
+### 🟣 Dashboard  
+![Dashboard](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104757.png)
 
-### 🟣 Settings
-![Settings](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104828.png)
+### 🟣 Schedule Meeting  
+![Schedule Meeting](https://raw.githubusercontent.com/HetviShukla18/Video-Conferencing-App/refs/heads/main/public/Screenshots/Screenshot%202025-11-28%20104828.png)
 
